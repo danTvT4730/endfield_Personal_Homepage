@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>晕蛋的小窝 ovo</title>
+<meta name="description" content="晕蛋的小窝" />
+<meta name="keywords" content="晕蛋,个人主页" />
+<meta name="author" content="晕蛋" />
+<meta name="theme-color" content="#0d9488" />
+<meta name="color-scheme" content="light" />
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<link rel="canonical" href="https://qiovo.cn" />
+<meta property="og:title" content="晕蛋的小窝 ovo" />
+<meta property="og:description" content="晕蛋的小窝" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://qiovo.cn" />
+<meta property="og:image" content="https://qiovo.cn/img/yundan.png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:site_name" content="晕蛋的小窝" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="晕蛋的小窝 ovo" />
+<meta name="twitter:description" content="晕蛋的小窝" />
+<meta name="twitter:image" content="https://qiovo.cn/img/yundan.png" />
+<link rel="icon" href="img/yundan.png" />
+<link rel="shortcut icon" href="img/yundan.png" />
+<link rel="apple-touch-icon" href="img/yundan.png" />
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+@font-face{font-family:'HarmonyOS Sans SC';font-weight:400;src:url('https://cdn.jsdelivr.net/npm/@arietta-studio/webfont-harmony-sans-sc@1.0.3/fonts/HarmonyOS_Sans_SC_Regular.woff2') format('woff2')}
+@font-face{font-family:'HarmonyOS Sans SC';font-weight:500;src:url('https://cdn.jsdelivr.net/npm/@arietta-studio/webfont-harmony-sans-sc@1.0.3/fonts/HarmonyOS_Sans_SC_Medium.woff2') format('woff2')}
+@font-face{font-family:'HarmonyOS Sans SC';font-weight:700;src:url('https://cdn.jsdelivr.net/npm/@arietta-studio/webfont-harmony-sans-sc@1.0.3/fonts/HarmonyOS_Sans_SC_Bold.woff2') format('woff2')}
+@font-face{font-family:'HarmonyOS Sans SC';font-weight:900;src:url('https://cdn.jsdelivr.net/npm/@arietta-studio/webfont-harmony-sans-sc@1.0.3/fonts/HarmonyOS_Sans_SC_Black.woff2') format('woff2')}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'HarmonyOS Sans SC','Noto Sans SC','Microsoft YaHei',sans-serif;
+  background:var(--bg-base);
+  color:var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+:root{
+  --bg-base:#ffffff;
+  --bg-deep:#f8f9fa;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f8f9fa;
+  --bg-elev:#f0f0f0;
+  --accent:#0d9488;
+  --accent-bright:#14b8a6;
+  --accent-dim:rgba(13,148,136,.08);
+  --accent-glow:rgba(13,148,136,.25);
+  --yellow:#ca8a04;
+  --yellow-bright:#eab308;
+  --red:#dc2626;
+  --red-bright:#ef4444;
+  --text-main:#1a1a1a;
+  --text-sub:#4a4a4a;
+  --text-muted:#9ca3af;
+  --border:rgba(0,0,0,.08);
+  --border-strong:rgba(0,0,0,.14);
+  --border-accent:rgba(13,148,136,.35);
+  --sidebar-w:72px;
+}
+
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  opacity:.12;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+}
+
+a,a:hover,a:focus,a:active{text-decoration:none}
+
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);z-index:50;
+  background:#ffffff;
+  border-right:1px solid rgb(217,217,217);
+  display:flex;flex-direction:column;align-items:center;
+  padding:20px 0;
+  transition:width .35s cubic-bezier(.2,.8,.2,1);
+  overflow:hidden;
+}
+.sidebar:hover{width:160px}
+.sidebar-nav{
+  display:flex;flex-direction:column;gap:8px;
+  flex:1;
+  justify-content:center;
+  width:100%;
+  padding:0 14px;
+}
+.nav-icon{
+  height:44px;
+  display:flex;flex-direction:row;align-items:center;
+  gap:0;
+  color:rgb(165,165,165);
+  text-decoration:none !important;
+  position:relative;
+  transition:all .3s;
+  border:1px solid transparent;
+  border-radius:8px;
+  padding:0 10px;
+  white-space:nowrap;
+}
+.nav-icon svg,.nav-icon i{
+  width:20px;height:20px;
+  flex-shrink:0;
+  transition:transform .3s;
+  display:inline-block;
+  vertical-align:middle;
+  text-decoration:none;
+}
+.nav-icon .nav-label{
+  font-family:'HarmonyOS Sans SC';font-size:12px;font-weight:500;
+  letter-spacing:.05em;
+  opacity:0;
+  max-width:0;
+  overflow:hidden;
+  transition:all .3s;
+  margin-left:0;
+}
+.sidebar:hover .nav-icon .nav-label{
+  opacity:1;max-width:120px;margin-left:12px;
+}
+.nav-icon::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:2px;height:0;background:rgb(25,25,25);
+  transition:height .3s;border-radius:0 2px 2px 0;
+}
+.nav-icon:hover{
+  color:rgb(25,25,25);
+  background:rgba(25,25,25,.06);
+}
+.nav-icon:hover::before{height:24px}
+.nav-icon.active{color:rgb(25,25,25);background:rgba(25,25,25,.1)}
+.nav-icon.active::before{height:24px}
+
+.sidebar-bottom{
+  display:flex;flex-direction:column;gap:12px;align-items:center;
+  width:100%;
+  padding:0 14px;
+}
+.sidebar-tool{
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(245,245,245,.9);border:1px solid rgb(217,217,217);
+  color:rgb(100,100,100);cursor:pointer;
+  transition:all .3s;
+  border-radius:10px;
+  flex-shrink:0;
+}
+.sidebar-tool:hover{color:rgb(25,25,25);border-color:rgb(150,150,150);background:#fff}
+#bgm-toggle{position:relative}
+#bgm-toggle.playing{color:rgb(25,25,25);border-color:rgb(25,25,25);background:#fff}
+#bgm-toggle.playing::after{
+  content:"";position:absolute;inset:-5px;border:1px solid rgb(25,25,25);
+  border-radius:12px;animation:bgmPulse 2s infinite;
+}
+@keyframes bgmPulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.2);opacity:0}}
+
+
+.mobile-header{
+  display:none;
+  position:fixed;top:0;left:0;right:0;height:56px;
+  background:#ffffff;border-bottom:1px solid rgb(217,217,217);
+  z-index:60;align-items:center;justify-content:space-between;
+  padding:0 16px;
+}
+.mobile-logo{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:18px;
+  color:var(--text-main);letter-spacing:.02em;
+}
+.mobile-menu-btn{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  background:transparent;border:none;color:rgb(25,25,25);
+  cursor:pointer;border-radius:8px;transition:background .2s;
+}
+.mobile-menu-btn:hover{background:rgba(25,25,25,.06)}
+.mobile-backdrop{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.35);z-index:45;
+  opacity:0;transition:opacity .3s;
+  pointer-events:none;
+}
+.mobile-backdrop.open{display:block;opacity:1;pointer-events:auto}
+.mobile-close-btn{
+  display:none;position:absolute;top:12px;right:16px;
+  width:40px;height:40px;align-items:center;justify-content:center;
+  background:transparent;border:none;color:rgb(25,25,25);
+  cursor:pointer;border-radius:8px;transition:background .2s;z-index:10;
+}
+.mobile-close-btn:hover{background:rgba(25,25,25,.06)}
+
+.main{
+  margin-left:var(--sidebar-w);
+  position:relative;z-index:2;
+  transition:margin-left .35s cubic-bezier(.2,.8,.2,1);
+}
+
+section{position:relative;z-index:2}
+.section-inner{
+  max-width:1200px;margin:0 auto;
+  padding:120px 48px;
+}
+.section-head{margin-bottom:56px;display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.section-num{
+  font-family:'HarmonyOS Sans SC';font-weight:500;font-size:13px;
+  color:var(--yellow);letter-spacing:.1em;
+}
+.section-num::before{
+  content:"";display:inline-block;width:32px;height:1px;
+  background:var(--yellow);vertical-align:middle;margin-right:14px;
+}
+.section-title{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:42px;
+  color:var(--text-main);letter-spacing:.02em;
+}
+.section-subtitle{
+  font-family:'HarmonyOS Sans SC';font-weight:500;font-size:13px;
+  color:var(--text-muted);letter-spacing:.1em;
+  text-transform:uppercase;margin-left:auto;
+}
+
+
+#hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('img/lizhiyan.png') center/cover no-repeat;
+  z-index:0;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.79) 0%,rgba(255,255,255,.50) 40%,rgba(255,255,255,.18) 70%,rgba(255,255,255,.54) 100%),
+    linear-gradient(180deg,rgba(255,255,255,.63) 0%,transparent 30%,transparent 70%,rgba(255,255,255,.77) 100%);
+}
+.hero-inner{
+  position:relative;z-index:3;max-width:1200px;width:100%;
+  margin:0 auto;padding:0 48px;
+  display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:center;
+}
+.avatar-wrap{
+  position:relative;width:240px;height:240px;margin:0 auto;
+}
+.avatar{
+  width:100%;height:100%;border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.9);
+  box-shadow:0 20px 60px rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.06);
+  position:relative;z-index:2;
+}
+.avatar-ring{
+  position:absolute;inset:-14px;border-radius:50%;
+  border:1px solid var(--border-accent);
+  animation:rotate 20s linear infinite;
+}
+.avatar-ring::before{
+  content:"";position:absolute;inset:8px;border-radius:50%;
+  border:1px dashed rgba(13,148,136,.25);
+}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-right{display:flex;flex-direction:column;gap:24px}
+.hero-title{
+  font-family:'HarmonyOS Sans SC';font-weight:900;font-size:68px;
+  color:var(--text-main);line-height:1.1;letter-spacing:.02em;
+}
+.hero-title .accent{color:var(--accent)}
+.hero-title .ovo{
+  font-family:'Space Grotesk','HarmonyOS Sans SC';font-weight:400;
+  font-size:42px;color:#f472b6;margin-left:12px;
+}
+.hero-type{
+  font-family:'HarmonyOS Sans SC';font-weight:500;font-size:22px;
+  color:var(--text-sub);min-height:32px;
+}
+.hero-type .cursor{
+  display:inline-block;width:2px;height:24px;background:var(--accent);
+  margin-left:4px;animation:blink 1s infinite;
+}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.hero-meta{
+  display:flex;gap:48px;margin-top:16px;flex-wrap:wrap;
+  padding-top:24px;border-top:1px solid var(--border);
+}
+.hero-meta-item{display:flex;flex-direction:column;gap:4px}
+.hero-meta-item .label{
+  font-family:'HarmonyOS Sans SC';font-size:10px;font-weight:500;
+  letter-spacing:.1em;color:#6b7280;text-transform:uppercase;
+}
+.hero-meta-item .value{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:20px;color:var(--text-main);
+}
+.hero-meta-item .value.green{color:var(--accent)}
+
+.hero-scroll{
+  position:absolute;left:48px;bottom:40px;z-index:3;
+  font-family:'HarmonyOS Sans SC';font-size:10px;
+  color:var(--text-muted);letter-spacing:.2em;
+  text-transform:uppercase;display:flex;align-items:center;gap:10px;
+}
+.hero-scroll::after{
+  content:"";width:1px;height:40px;background:var(--text-muted);
+  animation:scrollLine 1.5s infinite;
+}
+@keyframes scrollLine{0%{transform:scaleY(1);transform-origin:top}50%{transform:scaleY(0);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(1);transform-origin:bottom}}
+
+
+#signature{
+  min-height:80vh;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg-base);
+  position:relative;overflow:hidden;
+}
+.sig-deco{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;opacity:.1;
+  animation:rotate 60s linear infinite;
+}
+.sig-content{
+  position:relative;z-index:2;text-align:center;
+  max-width:720px;padding:0 24px;
+}
+.sig-label{
+  font-family:'HarmonyOS Sans SC';font-size:12px;font-weight:500;
+  letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;
+  margin-bottom:20px;
+}
+.sig-text{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:38px;
+  color:var(--text-main);line-height:1.4;letter-spacing:.02em;
+}
+.sig-text .cursor{
+  display:inline-block;width:3px;height:36px;background:var(--accent);
+  margin-left:6px;animation:blink 1s infinite;vertical-align:middle;
+}
+.sig-sub{
+  margin-top:28px;font-family:'HarmonyOS Sans SC';font-size:15px;
+  color:var(--text-muted);letter-spacing:.1em;
+}
+
+
+#games{background:var(--bg-deep)}
+.games-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.game-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;
+  transition:all .35s;
+  position:relative;
+}
+.game-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.game-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  border-color:var(--border-accent);
+}
+.game-card:hover::before{opacity:1}
+.game-visual{
+  height:220px;position:relative;overflow:hidden;
+  background:var(--bg-elev);
+}
+.game-visual img{
+  width:calc(100% - 20px);height:100%;object-fit:contain;
+  margin:0 auto;display:block;
+  transition:transform .5s;
+}
+.game-card:hover .game-visual img{transform:scale(1.05)}
+.game-body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.game-title{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:22px;
+  color:var(--text-main);
+}
+.game-desc{
+  font-size:14px;color:var(--text-sub);line-height:1.7;
+  margin-top:6px;
+}
+.game-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.game-tag{
+  font-family:'HarmonyOS Sans SC';font-size:10px;font-weight:500;
+  letter-spacing:.05em;
+  color:var(--accent);background:var(--accent-dim);
+  padding:4px 10px;border-radius:2px;
+}
+.game-link{
+  margin-top:14px;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;
+  background:var(--red);color:#fff;
+  font-family:'HarmonyOS Sans SC';font-size:11px;font-weight:500;letter-spacing:.05em;
+  text-decoration:none;transition:all .3s;
+  width:fit-content;
+}
+.game-link:hover{background:transparent;color:var(--red-bright);box-shadow:0 0 24px rgba(229,72,77,.3)}
+.game-link .arrow{transition:transform .3s}
+.game-link:hover .arrow{transform:translateX(4px)}
+
+
+#about{background:var(--bg-deep)}
+.about-intro{
+  font-size:16px;color:var(--text-sub);line-height:1.9;
+  max-width:900px;margin-bottom:48px;
+}
+.about-intro p+p{margin-top:18px}
+.about-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.about-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:4px;padding:28px;
+  transition:all .35s;position:relative;overflow:hidden;
+}
+.about-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity .35s;
+}
+.about-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
+  border-color:var(--border-accent);
+}
+.about-card:hover::before{opacity:1}
+.about-card-icon{
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent-dim);color:var(--accent);
+  border-radius:8px;margin-bottom:18px;
+  font-size:18px;
+}
+.about-card-title{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:18px;
+  color:var(--text-main);margin-bottom:10px;
+}
+.about-card-desc{
+  font-size:13px;color:var(--text-sub);line-height:1.8;
+}
+
+
+#skills{background:var(--bg-base)}
+.skills-wrap{
+  display:flex;flex-direction:column;gap:48px;
+}
+.skills-group{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:4px;padding:32px;
+}
+.skills-group-head{
+  display:flex;align-items:center;gap:14px;margin-bottom:28px;
+}
+.skills-group-icon{
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent-dim);color:var(--accent);
+  border-radius:8px;font-size:16px;
+}
+.skills-group-title{
+  font-family:'HarmonyOS Sans SC';font-weight:700;font-size:20px;
+  color:var(--text-main);
+}
+.skills-list{display:flex;flex-direction:column;gap:18px}
+.skill-item{
+  display:grid;grid-template-columns:120px 1fr 48px;gap:16px;
+  align-items:center;
+}
+.skill-name{
+  font-family:'HarmonyOS Sans SC';font-weight:500;font-size:14px;
+  color:var(--text-main);
+}
+.skill-bar{
+  height:8px;background:var(--bg-elev);border-radius:4px;overflow:hidden;
+}
+.skill-bar-fill{
+  height:100%;border-radius:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-bright));
+  width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1);
+}
+.skill-item.reveal.active .skill-bar-fill{width:var(--skill-w)}
+.skill-percent{display:none}
+.skill-level{
+  font-family:'HarmonyOS Sans SC';font-size:12px;font-weight:500;
+  color:var(--text-muted);text-align:right;
+}
+.skill-level{color:#9333ea}
+
+
+footer{
+  background:var(--bg-base);border-top:1px solid var(--border);
+  padding:48px;
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+}
+.footer-text{
+  font-family:'HarmonyOS Sans SC';font-size:12px;
+  color:var(--text-muted);letter-spacing:.05em;
+}
+.footer-links{
+  display:flex;gap:12px;align-items:center;
+}
+.footer-links a{
+  width:38px;height:38px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg-elev);
+  border:1px solid var(--border);
+  color:var(--text-sub);
+  border-radius:50%;
+  transition:all .3s;
+  text-decoration:none !important;
+}
+.footer-links a i{
+  text-decoration:none;
+  display:inline-block;
+  vertical-align:middle;
+}
+.footer-links a:hover{
+  color:var(--accent);
+  border-color:var(--border-accent);
+  background:var(--accent-dim);
+}
+
+
+.reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+
+@media(max-width:1024px){
+  .games-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .skill-item{grid-template-columns:90px 1fr 44px;gap:12px}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero-title{font-size:48px}
+  .hero-right{align-items:center}
+  .hero-meta{justify-content:center}
+  .section-inner{padding:80px 32px}
+}
+@media(max-width:768px){
+  .mobile-header{display:flex}
+  .mobile-backdrop{display:block}
+  .mobile-close-btn{display:flex}
+  .sidebar{
+    position:fixed;top:0;left:0;right:0;bottom:auto;
+    width:100%;height:auto;max-height:100vh;
+    padding:64px 16px 20px;
+    border-right:none;border-bottom:1px solid rgb(217,217,217);
+    transform:translateY(-100%);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1);
+    align-items:stretch;z-index:70;
+  }
+  .sidebar.open{transform:translateY(0)}
+  .sidebar:hover{width:100%}
+  .sidebar-nav{flex:0;justify-content:flex-start;padding:0;gap:4px}
+  .nav-icon{height:48px;padding:0 14px}
+  .nav-icon .nav-label{display:inline-block;opacity:1;max-width:none;margin-left:14px}
+  .sidebar-bottom{flex-direction:row;justify-content:flex-start;padding:16px 0 0;gap:16px}
+  .main{margin-left:0;margin-top:56px}
+  #hero{height:calc(100vh - 56px)}
+  .section-title{font-size:32px}
+  .sig-text{font-size:26px}
+  .hero-title{font-size:38px}
+  .hero-title .ovo{font-size:26px}
+  .hero-inner{padding:0 24px}
+  .hero-scroll{left:20px;bottom:24px}
+  .footer-inner{flex-direction:column;text-align:center}
+  .section-inner{padding:80px 24px}
+  .skill-item{grid-template-columns:70px 1fr 40px;gap:8px}
+  .skill-name{font-size:12px}
+  .skill-percent{font-size:12px}
+  .skills-group{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="mobile-header">
+  <div></div>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="菜单">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<div class="mobile-backdrop" id="mobile-backdrop"></div>
+
+<aside class="sidebar" id="sidebar">
+  <button class="mobile-close-btn" id="mobile-close-btn" aria-label="关闭菜单">
+    <i class="fas fa-xmark"></i>
+  </button>
+  <nav class="sidebar-nav">
+    <a href="#hero" class="nav-icon active" data-section="hero" title="主页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L12 3l9 9M5 10v10h14V10"/></svg>
+      <span class="nav-label">主页</span>
+    </a>
+    <a href="#signature" class="nav-icon" data-section="signature" title="心言">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg>
+      <span class="nav-label">心言</span>
+    </a>
+    <a href="#about" class="nav-icon" data-section="about" title="关于我">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+      <span class="nav-label">关于我</span>
+    </a>
+    <a href="#skills" class="nav-icon" data-section="skills" title="技术栈">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <span class="nav-label">技术栈</span>
+    </a>
+    <a href="#games" class="nav-icon" data-section="games" title="游戏">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M7 12h3M8.5 10.5v3M15 11h.01M17 13h.01"/></svg>
+      <span class="nav-label">游戏</span>
+    </a>
+  </nav>
+  <div class="sidebar-bottom">
+    <button id="bgm-toggle" class="sidebar-tool" aria-label="背景音乐" title="背景音乐">
+      <i id="bgmIcon" class="fas fa-volume-xmark"></i>
+    </button>
+  </div>
+</aside>
+
+<div class="main">
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="avatar-wrap reveal">
+      <div class="avatar-ring"></div>
+      <img src="img/yundan.png" alt="晕蛋" class="avatar" />
+    </div>
+    <div class="hero-right reveal">
+      <h1 class="hero-title">晕蛋的<span class="accent">小窝</span><span class="ovo">ovo</span></h1>
+      <div class="hero-type"><span id="heroType"></span><span class="cursor"></span></div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">性别</span>
+          <span class="value">男</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">身份</span>
+          <span class="value">群众</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">状态</span>
+          <span class="value green">在线</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">向下滚动</div>
+</section>
+
+<section id="signature">
+  <svg class="sig-deco" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#0d9488" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#0d9488" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="40" fill="none" stroke="#0d9488" stroke-width="0.5"/>
+    <g stroke="#0d9488" stroke-width="1" fill="none">
+      <line x1="100" y1="2" x2="100" y2="40"/>
+      <line x1="100" y1="160" x2="100" y2="198"/>
+      <line x1="2" y1="100" x2="40" y2="100"/>
+      <line x1="160" y1="100" x2="198" y2="100"/>
+      <line x1="29" y1="29" x2="55" y2="55"/>
+      <line x1="145" y1="145" x2="171" y2="171"/>
+      <line x1="171" y1="29" x2="145" y2="55"/>
+      <line x1="55" y1="145" x2="29" y2="171"/>
+    </g>
+    <g fill="#0d9488">
+      <circle cx="100" cy="100" r="3"/>
+      <rect x="96" y="2" width="8" height="8"/>
+      <rect x="96" y="190" width="8" height="8"/>
+      <rect x="2" y="96" width="8" height="8"/>
+      <rect x="190" y="96" width="8" height="8"/>
+    </g>
+  </svg>
+  <div class="sig-content reveal">
+    <div class="sig-label">心之言</div>
+    <div class="sig-text"><span id="sigType"></span><span class="cursor"></span></div>
+    <div class="sig-sub">晕蛋 · ovo</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">关于我</h2>
+      <span class="section-subtitle">ABOUT ME</span>
+    </div>
+    <div class="about-intro reveal">
+      <p>资深全栈工程师，拥有多年互联网开发经验，长期专注于高并发、高可用系统的设计与落地。热爱技术探索，善于将复杂业务抽象为稳定可靠的工程实现，在项目全生命周期中持续关注性能、可维护性与用户体验。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-server"></i></div>
+        <div class="about-card-title">服务端开发</div>
+        <div class="about-card-desc">精通 Python，熟练掌握 PHP，能独立完成后端服务、接口设计与性能调优。</div>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-database"></i></div>
+        <div class="about-card-title">数据架构</div>
+        <div class="about-card-desc">精通 MySQL 优化，熟悉 Redis 缓存方案，能设计稳定高效的数据存储层。</div>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="about-card-title">分布式系统</div>
+        <div class="about-card-desc">熟悉分布式事务、锁与一致性协议，具备高并发系统设计与实战经验。</div>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-code"></i></div>
+        <div class="about-card-title">全栈能力</div>
+        <div class="about-card-desc">熟练使用 Tailwind CSS、Chart.js、jQuery，可独立完成前后端一体化开发。</div>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="about-card-title">移动端开发</div>
+        <div class="about-card-desc">熟悉 uni-app 跨端框架，具备小程序、H5、App 多端统一开发与上线能力。</div>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-icon"><i class="fas fa-rocket"></i></div>
+        <div class="about-card-title">工程追求</div>
+        <div class="about-card-desc">追求代码质量与交付效率的平衡，让系统稳定运行、让团队协作更顺畅。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">技术栈</h2>
+      <span class="section-subtitle">TECH STACK</span>
+    </div>
+    <div class="skills-wrap">
+      <div class="skills-group reveal">
+        <div class="skills-group-head">
+          <div class="skills-group-icon"><i class="fas fa-code"></i></div>
+          <div class="skills-group-title">编程语言</div>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item reveal" data-skill="95">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:95%"></div></div>
+            <div class="skill-level master">精通</div>
+          </div>
+          <div class="skill-item reveal" data-skill="95">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:95%"></div></div>
+            <div class="skill-level master">精通</div>
+          </div>
+          <div class="skill-item reveal" data-skill="75">
+            <div class="skill-name">PHP</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:75%"></div></div>
+            <div class="skill-level">熟练</div>
+          </div>
+          <div class="skill-item reveal" data-skill="75">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:75%"></div></div>
+            <div class="skill-level">熟练</div>
+          </div>
+          <div class="skill-item reveal" data-skill="75">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:75%"></div></div>
+            <div class="skill-level">熟练</div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <div class="skills-group-head">
+          <div class="skills-group-icon"><i class="fas fa-database"></i></div>
+          <div class="skills-group-title">数据存储</div>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item reveal" data-skill="95">
+            <div class="skill-name">MySQL</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:95%"></div></div>
+            <div class="skill-level master">精通</div>
+          </div>
+          <div class="skill-item reveal" data-skill="75">
+            <div class="skill-name">Redis</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:75%"></div></div>
+            <div class="skill-level">熟练</div>
+          </div>
+          <div class="skill-item reveal" data-skill="75">
+            <div class="skill-name">SQLite</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:75%"></div></div>
+            <div class="skill-level">熟练</div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-group reveal">
+        <div class="skills-group-head">
+          <div class="skills-group-icon"><i class="fas fa-cogs"></i></div>
+          <div class="skills-group-title">中间件与运维</div>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item reveal" data-skill="55">
+            <div class="skill-name">Kafka</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:55%"></div></div>
+            <div class="skill-level">掌握</div>
+          </div>
+          <div class="skill-item reveal" data-skill="55">
+            <div class="skill-name">RabbitMQ</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:55%"></div></div>
+            <div class="skill-level">掌握</div>
+          </div>
+          <div class="skill-item reveal" data-skill="55">
+            <div class="skill-name">Docker</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:55%"></div></div>
+            <div class="skill-level">掌握</div>
+          </div>
+          <div class="skill-item reveal" data-skill="55">
+            <div class="skill-name">Grafana</div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="--skill-w:55%"></div></div>
+            <div class="skill-level">掌握</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">所玩之境</h2>
+      <span class="section-subtitle">战场记录</span>
+    </div>
+    <div class="games-grid">
+      <div class="game-card reveal">
+        <div class="game-visual">
+          <img src="img/df.jpg" alt="三角洲行动" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">三角洲行动</div>
+          <p class="game-desc">硬核战术射击，化身特战干员穿梭于现代战场。撤离、搜刮、对抗，每一次抉择都关乎生死。</p>
+          <div class="game-tags">
+            <span class="game-tag">战术射击</span>
+            <span class="game-tag">腾讯游戏</span>
+          </div>
+          <a href="https://df.qq.com/" target="_blank" rel="noopener" class="game-link">
+            访问官网 <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="game-card reveal">
+        <div class="game-visual">
+          <img src="img/zmd.png" alt="明日方舟：终末地" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">明日方舟：终末地</div>
+          <p class="game-desc">深入未知之地，探索遗迹与文明，在广袤世界中书写属于自己的旅程。</p>
+          <div class="game-tags">
+            <span class="game-tag">角色扮演</span>
+            <span class="game-tag">鹰角网络</span>
+          </div>
+          <a href="https://endfield.hypergryph.com/#information" target="_blank" rel="noopener" class="game-link">
+            访问官网 <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="game-card reveal">
+        <div class="game-visual">
+          <img src="img/valorant.jpg" alt="无畏契约" />
+        </div>
+        <div class="game-body">
+          <div class="game-title">无畏契约</div>
+          <p class="game-desc">5v5 战术射击，技能与枪法交织。精准爆头，灵性技能，每一回合都是一场博弈。</p>
+          <div class="game-tags">
+            <span class="game-tag">战术射击</span>
+            <span class="game-tag">拳头游戏</span>
+          </div>
+          <a href="https://val.qq.com/" target="_blank" rel="noopener" class="game-link">
+            访问官网 <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-text">
+      © 2026 晕蛋的小窝
+    </div>
+    <div class="footer-links">
+      <a href="https://qm.qq.com/q/4S3ldHr7uU" target="_blank" rel="noopener" title="QQ 好友" aria-label="QQ">
+        <i class="fab fa-qq" style="font-size:18px"></i>
+      </a>
+      <a href="mailto:2330214163@qq.com" title="邮箱" aria-label="邮箱">
+        <i class="fas fa-envelope" style="font-size:18px"></i>
+      </a>
+      <a href="https://v.douyin.com/1dYprDNbcHk/" target="_blank" rel="noopener" title="抖音" aria-label="抖音">
+        <i class="fab fa-tiktok" style="font-size:18px"></i>
+      </a>
+      <a href="https://github.com/danTvT4730/endfield_Personal_Homepage" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <i class="fab fa-github" style="font-size:18px"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<audio id="bgm" src="img/bgm.mp3" loop preload="auto" autoplay playsinline></audio>
+
+<script>
+class ParticleBackground{
+  constructor(canvas){
+    this.canvas=canvas;
+    this.ctx=canvas.getContext('2d');
+    this.particles=[];
+    this.resize();
+    this.init();
+    window.addEventListener('resize',()=>{this.resize();this.init()});
+    this.animate();
+  }
+  resize(){
+    this.canvas.width=window.innerWidth;
+    this.canvas.height=window.innerHeight;
+  }
+  init(){
+    const count=window.innerWidth<768?28:70;
+    this.particles=[];
+    for(let i=0;i<count;i++){
+      this.particles.push({
+        x:Math.random()*this.canvas.width,
+        y:Math.random()*this.canvas.height,
+        vx:(Math.random()-.5)*.25,
+        vy:(Math.random()-.5)*.25,
+        r:Math.random()*1.5+.3,
+        a:Math.random()*.4+.15,
+        c:Math.random()>.85?'202,138,4':'13,148,136'
+      });
+    }
+  }
+  animate(){
+    const ctx=this.ctx;
+    ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    this.particles.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>this.canvas.width)p.vx*=-1;
+      if(p.y<0||p.y>this.canvas.height)p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba('+p.c+','+p.a+')';
+      ctx.fill();
+    });
+    for(let i=0;i<this.particles.length;i++){
+      for(let j=i+1;j<this.particles.length;j++){
+        const dx=this.particles[i].x-this.particles[j].x;
+        const dy=this.particles[i].y-this.particles[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<110){
+          ctx.beginPath();
+          ctx.moveTo(this.particles[i].x,this.particles[i].y);
+          ctx.lineTo(this.particles[j].x,this.particles[j].y);
+          ctx.strokeStyle='rgba(13,148,136,'+(.1*(1-d/110))+')';
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(()=>this.animate());
+  }
+}
+
+class Typewriter{
+  constructor(el,texts,options={}){
+    this.el=el;
+    this.texts=texts;
+    this.speed=options.speed||100;
+    this.deleteSpeed=options.deleteSpeed||50;
+    this.hold=options.hold||2000;
+    this.index=0;this.isDeleting=false;this.txt='';
+    this.tick();
+  }
+  tick(){
+    const full=this.texts[this.index];
+    if(this.isDeleting){
+      this.txt=full.substring(0,this.txt.length-1);
+    }else{
+      this.txt=full.substring(0,this.txt.length+1);
+    }
+    this.el.textContent=this.txt;
+    let delta=this.isDeleting?this.deleteSpeed:this.speed;
+    if(!this.isDeleting&&this.txt===full){
+      delta=this.hold;
+      this.isDeleting=true;
+    }else if(this.isDeleting&&this.txt===''){
+      this.isDeleting=false;
+      this.index=(this.index+1)%this.texts.length;
+      delta=400;
+    }
+    setTimeout(()=>this.tick(),delta);
+  }
+}
+
+class BGMToggle{
+  constructor(btn,audio){
+    this.btn=btn;this.audio=audio;
+    this.icon=btn.querySelector('#bgmIcon');
+    this.updateIcon();
+    this.btn.addEventListener('click',()=>this.toggle());
+  }
+  updateIcon(){
+    if(this.audio.paused){
+      this.btn.classList.remove('playing');
+      this.icon.className='fas fa-volume-xmark';
+    }else{
+      this.btn.classList.add('playing');
+      this.icon.className='fas fa-volume-high';
+    }
+  }
+  toggle(){
+    if(this.audio.paused){
+      this.audio.volume=.4;
+      this.audio.play().then(()=>this.updateIcon()).catch(()=>{});
+    }else{
+      this.audio.pause();
+      this.updateIcon();
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  new ParticleBackground(document.getElementById('particles'));
+
+  new Typewriter(document.getElementById('heroType'),[
+    '欢迎来到我的小窝 ovo ~',
+    '定不辱应龙之名',
+    '心如铸铁，行如剑锋',
+    '一个普通玩家的自留地',
+    '晕蛋在线，随时开黑',
+    '愿与你在此相遇'
+  ],{speed:90,deleteSpeed:45,hold:2200});
+
+  new Typewriter(document.getElementById('sigType'),[
+    '欢迎来到晕蛋的小窝 ovo ~',
+    '应龙的战法重在其势',
+    '守关应龙，直面裂隙',
+    '保持热爱，奔赴山海',
+    '愿每一天都值得期待'
+  ],{speed:120,deleteSpeed:60,hold:2800});
+
+  const bgmToggle=new BGMToggle(
+    document.getElementById('bgm-toggle'),
+    document.getElementById('bgm')
+  );
+  const bgm=document.getElementById('bgm');
+  bgm.volume=.4;
+  const tryPlay=()=>{bgm.play().then(()=>bgmToggle.updateIcon()).catch(()=>bgmToggle.updateIcon());};
+  tryPlay();
+  const resumeOnInteraction=function(ev){if(bgm.paused&&!(ev.target instanceof Element&&ev.target.closest('#bgm-toggle'))){tryPlay();}['click','touchstart','keydown'].forEach(e=>window.removeEventListener(e,resumeOnInteraction));};
+  ['click','touchstart','keydown'].forEach(e=>window.addEventListener(e,resumeOnInteraction));
+
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting)entry.target.classList.add('active');
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  const sections=['hero','signature','about','skills','games'];
+  const navs=document.querySelectorAll('.nav-icon');
+  window.addEventListener('scroll',()=>{
+    let current='hero';
+    const scrollPos=window.scrollY+window.innerHeight/2;
+    sections.forEach(id=>{
+      const section=document.getElementById(id);
+      if(section&&section.offsetTop<=scrollPos){
+        current=id;
+      }
+    });
+    navs.forEach(nav=>{
+      nav.classList.toggle('active',nav.dataset.section===current);
+    });
+  });
+
+  const sidebar=document.getElementById('sidebar');
+  const backdrop=document.getElementById('mobile-backdrop');
+  const menuBtn=document.getElementById('mobile-menu-btn');
+  const closeBtn=document.getElementById('mobile-close-btn');
+  const openMenu=()=>{sidebar.classList.add('open');backdrop.classList.add('open');};
+  const closeMenu=()=>{sidebar.classList.remove('open');backdrop.classList.remove('open');};
+  menuBtn.addEventListener('click',openMenu);
+  closeBtn.addEventListener('click',closeMenu);
+  backdrop.addEventListener('click',closeMenu);
+  document.querySelectorAll('.nav-icon').forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+});
+</script>
+</body>
+</html>
